@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Plutogenix-Ordertest</title>
+    <link rel="stylesheet" href="/ordertest.css" />
+    <link rel="stylesheet" href="/navbar.css" />
+  </head>
+  <body>
+    <div id="navbar-container"></div>
+    <div class="order-container">
+      <div class="order-inner1">
+        <img src="assets/Maskgroup.png" alt="hand" class="order-inner" />
+      </div>
+      <div class="order-inner2">
+        <div class="book">Book A Test</div>
+        <div class="fast">Fastest and easiest way to order a test.</div>
+        <div class="report">Reports in 24 hours.</div>
+        <div class="downloadbutt">
+          <a class="download" href="/index.html">Download App</a>
+        </div>
+      </div>
+    </div>
+    <!-- everyday test card section -->
+    <section class="tests-section">
+      <h2 class="tests-title">Everyday Tests</h2>
+      <p class="tests-subtitle">
+        Lorem Ipsum is simply dummy text of the printing and typesetting
+        industry.
+      </p>
+
+      <div class="tests-grid">
+        <div class="test-card">
+          <img src="assets/microbiology.png" alt="Microbiology" />
+          <div class="overlay1">Microbiology</div>
+        </div>
+
+        <div class="test-card">
+          <img src="assets/toxicology.jpg" alt="Toxicology" />
+          <div class="overlay2">Toxicology</div>
+        </div>
+
+        <div class="test-card">
+          <img src="assets/histopathology.jpg" alt="Histopathology" />
+          <div class="overlay1">Histopathology</div>
+        </div>
+
+        <div class="test-card">
+          <img src="assets/urinalysis.jpg" alt="Urinalysis" />
+          <div class="overlay2">Urinalysis</div>
+        </div>
+      </div>
+
+       <div class="dots">••••</div>
+    </section>
+<!-- Most Ordered Tests -->
+<section class="tests-section">
+  <h2 class="tests-title">Most Ordered <span>Tests</span></h2>
+  <p class="tests-subtitle">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+
+  <div class="tests-grid">
+    <div class="test-card">
+      <img src="assets/urine.jpg" alt="Urine Tests">
+      <div class="overlay1">Urine Tests</div>
+    </div>
+
+    <div class="test-card">
+      <img src="assets/skin.jpg" alt="Skin Scrapings">
+      <div class="overlay2">Skin Scrapings</div>
+    </div>
+
+    <div class="test-card">
+      <img src="assets/blood.jpg" alt="Blood Tests">
+      <div class="overlay1">Blood Tests</div>
+    </div>
+
+    <div class="test-card">
+      <img src="assets/faecal.jpg" alt="Faecal Tests">
+      <div class="overlay2">Faecal Tests</div>
+    </div>
+  </div>
+
+  <div class="dots">••••</div>
+</section>
+
+
+<!-- Health Conditions -->
+<section class="tests-section">
+  <h2 class="tests-title">Health <span>Conditions</span></h2>
+  <p class="tests-subtitle">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+
+  <div class="tests-grid">
+    <div class="test-card">
+      <img src="assets/infections.jpg" alt="Infections">
+      <div class="overlay1">Infections</div>
+    </div>
+
+    <div class="test-card">
+      <img src="assets/obesity.jpg" alt="Obesity">
+      <div class="overlay2">Obesity</div>
+    </div>
+
+    <div class="test-card">
+      <img src="assets/allergies.jpg" alt="Allergies">
+      <div class="overlay1">Allergies</div>
+    </div>
+
+    <div class="test-card">
+      <img src="assets/diabetes.jpg" alt="Diabetes">
+      <div class="overlay2">Diabetes</div>
+    </div>
+  </div>
+
+  <div class="dots">••••</div>
+</section>
+ <div id="footer-container"></div>
+
+
+
+    <script>
+      fetch("navbar.html")
+        .then((r) => r.text())
+        .then((html) => {
+          document.getElementById("navbar-container").innerHTML = html;
+          (function ($) {
+            $("#pgx-nav a").on("click", function () {
+              if ($(".navbar-toggle").is(":visible")) {
+                $("#pgx-nav").collapse("hide");
+              }
+            });
+          })(jQuery);
+        });
+        // Footer
+    fetch('footer.html').then(r => r.text()).then(html => {
+      document.getElementById('footer-container').innerHTML = html;
+      document.getElementById('year').textContent = new Date().getFullYear();
+    });
+    </script>
+  </body>
+</html>
