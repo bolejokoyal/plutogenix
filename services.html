@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="services.css">
+    <title>Services</title>
+</head>
+
+<body>
+    <div id="navbar-container"></div>
+    <div class="hero-section-service">
+        <div>
+            <p class="hero-section-service-1">Wide Range of<br />Services To Suit<br />Every Need</p>
+        </div>
+        <div>
+            <p class="hero-section-service-2">Explore our range of diagnostic tests from routine checkups<br />to
+                specialised genetic tests for all animals, big and small.</p>
+        </div>
+        <div><button class="hero-section-service-3">Explore Test Menu</button></div>
+    </div>
+
+    <div id="footer-container"></div>
+
+    <script>
+        fetch('navbar.html').then(r => r.text()).then(html => {
+            document.getElementById('navbar-container').innerHTML = html;
+            (function ($) {
+                $('#pgx-nav a').on('click', function () {
+                    if ($('.navbar-toggle').is(':visible')) { $('#pgx-nav').collapse('hide'); }
+                });
+            })(jQuery);
+        });
+
+        // Footer
+        fetch('footer.html').then(r => r.text()).then(html => {
+            document.getElementById('footer-container').innerHTML = html;
+            document.getElementById('year').textContent = new Date().getFullYear();
+        });
+    </script>
+</body>
+
+</html>
