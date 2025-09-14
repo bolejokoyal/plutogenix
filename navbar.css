@@ -1,0 +1,80 @@
+/* Navbar
+.pgx-navbar {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background: #fff;
+  border: none;
+  box-shadow: 0 0.125rem 0.75rem rgba(0, 0, 0, 0.06);
+  padding: 0.5rem 0;
+}
+
+.pgx-navbar .navbar-brand img {
+  height: 3rem;
+  max-width: 100%;
+}
+
+.pgx-menu>li>a {
+  font-weight: 600;
+  color: #3a3a3a !important;
+  padding: 1rem;
+}
+
+.pgx-menu>li>a:hover {
+  color: #ff7a1a !important;
+}
+
+.btn-login {
+  background: #ff7a1a;
+  color: #fff !important;
+  padding: 0.6rem 1.2rem;
+  font-weight: 700;
+  border-radius: 0.5rem;
+}
+
+.btn-login:hover {
+  background: #af5718 !important;
+} */
+@import url('https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+.container{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+.inner-container{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    list-style-type: none;
+}
+.ul-container{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    list-style-type: none;
+    li{
+        padding: 7px;
+    }
+}
+.href-fix{
+    text-decoration: none;
+    color: black;
+}
+
+.loginbutton{
+    font-size: 14px;
+    background-color: #F15A22;
+    padding: 14px 14px;
+    border-radius: 15px;
+    width: 79px;
+    height: 49px;
+    border-radius: 15px;
+    border-width: 2px;
+    color: aliceblue;
+    font-family: "Inter", sans-serif;
+     /* font-weight: 300; */
+}
+
+.navbar-brand{
+    padding: 10px
+}

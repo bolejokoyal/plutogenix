@@ -4,8 +4,64 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Plutogenix</title>
+    <link rel="stylesheet" href="/index.css">
+    <link rel="stylesheet" href="/navbar.css">
 </head>
 <body>
-    
+    <div id="navbar-container"></div>
+
+
+
+
+<!-- Load navbar dynamically  -->
+   <script>
+    fetch('navbar.html').then(r => r.text()).then(html => {
+      document.getElementById('navbar-container').innerHTML = html;
+      (function ($) {
+        $('#pgx-nav a').on('click', function () {
+          if ($('.navbar-toggle').is(':visible')) { $('#pgx-nav').collapse('hide'); }
+        });
+      })(jQuery);
+    });
+
+    // Footer
+    fetch('footer.html').then(r => r.text()).then(html => {
+      document.getElementById('footer-container').innerHTML = html;
+      document.getElementById('year').textContent = new Date().getFullYear();
+    });
+
+  </script>
+
+  <script>
+    // Tiny slider for testimonials (no external libs)
+    (function () {
+      var track = document.querySelector('.testi-track');
+      var cards = document.querySelectorAll('.testimonial-card');
+      var dots = document.querySelectorAll('.testi-dots .dot');
+      if (!track) return;
+
+      function goTo(i) {
+        var card = cards[i];
+        if (!card) return;
+        var offset = card.offsetLeft - (track.parentElement.clientWidth - card.clientWidth) / 2;
+        track.style.transform = 'translateX(' + (-offset) + 'px)';
+        [].forEach.call(dots, function (d) { d.classList.remove('is-active'); });
+        dots[i].classList.add('is-active');
+      }
+
+      [].forEach.call(dots, function (d) {
+        d.addEventListener('click', function () { goTo(parseInt(d.getAttribute('data-slide'), 10)); });
+      });
+
+      // Start centered on middle card (index 1) for md+; on mobile start at 0
+      function init() {
+        if (window.innerWidth >= 992) { goTo(1); } else { goTo(0); }
+      }
+      window.addEventListener('resize', init);
+      setTimeout(init, 50);
+    })();
+  </script>
 </body>
+
 </html>
+
