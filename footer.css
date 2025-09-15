@@ -7,6 +7,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  margin: 1px 10px;
 }
 .footer-container {
   background-color: #f15922;
@@ -95,7 +96,8 @@
 .footer-company-credits {
   display: flex;
   flex-direction: row;
-  justify-content: space-around;
+  justify-content: space-between;
+  font-size: 13px;
 }
 .footer-company-credits-ul {
   display: flex;
